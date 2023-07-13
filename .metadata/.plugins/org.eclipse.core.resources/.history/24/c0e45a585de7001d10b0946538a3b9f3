@@ -1,0 +1,55 @@
+package com.association.entity;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
+
+@Entity
+@Table(name = "student_info")
+public class Student  implements Serializable
+{
+	
+	@Id
+	@GenericGenerator(name="auto_gen",strategy="increment")
+	  @GeneratedValue(generator = "auto_gen")
+	 
+	@Column(name = "sid")
+    private long sid;
+  
+	
+	@Column(name = "name")
+    private String name;
+
+
+	public long getSid() {
+		return sid;
+	}
+
+
+	public void setSid(long sid) {
+		this.sid = sid;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
+	
+	
+	
+  
+  
+}

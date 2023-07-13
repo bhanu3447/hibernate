@@ -1,0 +1,21 @@
+package com.association.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Address 
+{
+	@Id
+	@Column(name = "aid")
+	private int aid;
+	
+	
+	@Column(name = "addloc")
+	private String addloc;
+	
+	@Column(name = "pin")
+	private long pin;
+
+}

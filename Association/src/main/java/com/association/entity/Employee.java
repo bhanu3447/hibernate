@@ -1,0 +1,59 @@
+package com.association.entity;
+
+
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+
+import org.hibernate.annotations.Cascade;
+
+@Entity
+public class Employee 
+{
+	@Id
+	@Column(name = "eid")
+  private int eid;
+  
+	@Column(name = "ename")
+  private String ename;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Address address;
+
+	public int getEid() {
+		return eid;
+	}
+
+	public void setEid(int eid) {
+		this.eid = eid;
+	}
+
+	public String getEname() {
+		return ename;
+	}
+
+	public void setEname(String ename) {
+		this.ename = ename;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	
+	
+	
+
+	
+	
+	
+	
+  
+}

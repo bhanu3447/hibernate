@@ -1,0 +1,60 @@
+package com.association.entity;
+
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
+
+@Entity
+@Table(name = "laptop_info")
+@GenericGenerator(name="auto_gen",strategy="increment")
+@GeneratedValue(generator = "auto_gen")
+public class Laptop 
+{
+	
+
+	@Id
+	@Column(name = "lid")
+    private long lid;
+  
+	
+	@Column(name = "lname")
+    private String lname;
+	
+	@ManyToOne
+	private Student student;
+
+	public long getLid() {
+		return lid;
+	}
+
+	public void setLid(long lid) {
+		this.lid = lid;
+	}
+
+	public String getLname() {
+		return lname;
+	}
+
+	public void setLname(String lname) {
+		this.lname = lname;
+	}
+
+	public Student getStudent() {
+		return student;
+	}
+
+	public void setStudent(Student student) {
+		this.student = student;
+	}
+
+	
+	
+
+}

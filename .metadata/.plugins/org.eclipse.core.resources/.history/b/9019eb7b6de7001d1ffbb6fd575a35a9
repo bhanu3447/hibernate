@@ -1,0 +1,36 @@
+package com.association.core;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.association.entity.Address;
+import com.association.entity.Employee;
+import com.association.sessionfactoryutil.SessionFactoryUtil;
+
+public class ManyToOne 
+{
+  public static void main(String[] args)
+  {
+	  Employee employee = new Employee();
+	  employee.setEid(1);
+	  employee.setEname("bhanu");
+	  
+	  
+	  
+	  Employee employee2 = new Employee();
+	  employee2.setEid(25);
+	  employee2.setEname("prakash");
+	  
+	  Address address = new Address();
+	  address.setAid(202);
+	  address.setAddloc("banglore");
+	  address.setPin(563007);
+	  address.setEmployee(employee2);
+	  address.setEmployee(employee);
+	  SessionFactory sessionFactory = SessionFactoryUtil.getSessionFactory();
+	  Session session = sessionFactory.openSession();
+	  Transaction transaction = session.beginTransaction();
+
+  }
+}

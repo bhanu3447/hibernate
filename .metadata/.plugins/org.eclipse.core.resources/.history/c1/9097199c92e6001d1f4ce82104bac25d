@@ -1,0 +1,55 @@
+package com.association.repository;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.association.entity.Brand;
+import com.association.entity.Flight;
+import com.association.entity.Product;
+import com.association.entity.Team;
+import com.association.sessionfactoryutil.SessionFactoryUtil;
+
+
+
+public class association
+{
+  public void saveTeamDetails(Team team)
+  {
+	  SessionFactory sessionFactory = SessionFactoryUtil.getSessionFactory();
+	  Session session = sessionFactory.openSession();
+	  Transaction transaction = session.beginTransaction();
+	  session.merge(team);
+	  transaction.commit();
+	  
+  }
+  public void saveFlightDetails(Flight flight)
+  {
+	  SessionFactory sessionFactory = SessionFactoryUtil.getSessionFactory();
+	  Session session = sessionFactory.openSession();
+	  Transaction transaction = session.beginTransaction();
+	  session.merge(flight);
+	  transaction.commit();
+	  
+  }
+  
+  public void saveBrands(Brand brand)
+  {
+	  SessionFactory sessionFactory = SessionFactoryUtil.getSessionFactory();
+	  Session session = sessionFactory.openSession();
+	  Transaction transaction = session.beginTransaction();
+	  session.merge(brand);
+	  transaction.commit();
+	  
+  }
+  
+  public void saveBrands(Product product)
+  {
+	  SessionFactory sessionFactory = SessionFactoryUtil.getSessionFactory();
+	  Session session = sessionFactory.openSession();
+	  Transaction transaction = session.beginTransaction();
+	  session.merge(product);
+	  transaction.commit();
+	  
+  }
+}

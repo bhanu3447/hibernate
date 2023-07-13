@@ -1,0 +1,49 @@
+package com.association.core;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.association.entity.Laptop;
+import com.association.entity.Student;
+import com.association.repository.association;
+import com.association.sessionfactoryutil.SessionFactoryUtil;
+
+public class ManyToOne
+{
+   public static void main(String[] args) 
+   {
+	   
+
+		  Student student = new Student();
+		  student.setName("bhanu");
+		  student.setSid(123);
+		  
+	  Laptop laptop = new Laptop();
+	  laptop.setLid(1);
+	  laptop.setLname("hp");
+	  laptop.setStudent(student);
+	  
+	 
+	 
+	  
+	  
+	  
+	  SessionFactory sessionFactory = SessionFactoryUtil.getSessionFactory();
+	  Session session = sessionFactory.openSession();
+	  Transaction transaction = session.beginTransaction();
+
+	  session.save(laptop);
+	  session.save(student);
+	  transaction.commit();
+	  
+	  
+	  
+	  
+	  
+	  
+   }
+}

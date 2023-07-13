@@ -1,0 +1,66 @@
+package com.association.entity;
+
+import java.io.Serializable;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
+
+@Entity
+@Table(name="product_info")
+public class Product implements Serializable
+{
+	  @Id
+	  @GenericGenerator(name="auto_gen",strategy="increment")
+	  @GeneratedValue(generator = "auto_gen")
+	  @Column(name = "id")
+	   private long id;
+	
+	@Column(name="product_name")
+  private String productName;
+  
+  @ManyToMany(cascade = CascadeType.ALL)
+  private List<Brand> brands;
+
+
+public Product(String productName, List<Brand> brands) {
+	super();
+	this.productName = productName;
+	this.brands = brands;
+}
+
+
+public Product() {
+	super();
+}
+
+
+public String getProductName() {
+	return productName;
+}
+
+
+public void setProductName(String productName) {
+	this.productName = productName;
+}
+
+
+public List<Brand> getBrands() {
+	return brands;
+}
+
+
+public void setBrands(List<Brand> brands) {
+	this.brands = brands;
+}
+ 
+  
+}

@@ -1,0 +1,32 @@
+package com.association.sessionfactoryutil;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import com.association.entity.Airhostess;
+import com.association.entity.Captain;
+import com.association.entity.Flight;
+import com.association.entity.Team;
+import com.association.util.ConnectionPropertiesUtil;
+
+
+public class SessionFactoryUtil
+{
+ private static SessionFactory sessionFactory=null;
+ public static SessionFactory getSessionFactory()
+ {
+	 if(sessionFactory==null)
+	 {
+		 Configuration cfg = new Configuration();
+		  cfg.setProperties(ConnectionPropertiesUtil.getMysqlDbProperties());
+//		  cfg.addAnnotatedClass(Team.class);
+//		  cfg.addAnnotatedClass(Captain.class);
+//		  cfg.addAnnotatedClass(Flight.class);
+//		  cfg.addAnnotatedClass(Airhostess.class);
+	
+		  
+		  sessionFactory = cfg.buildSessionFactory();
+	 }
+	return sessionFactory;
+ } 
+}

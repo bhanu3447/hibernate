@@ -1,0 +1,20 @@
+package com.association.core;
+
+import com.association.entity.Laptop;
+
+public class ManyToOne
+{
+   public static void main(String[] args) 
+   {
+	  Laptop laptop = new Laptop();
+	  laptop.setLid(1);
+	  laptop.setLname("hp");
+	  
+	  
+	  Laptop laptop2 = new Laptop();
+	  laptop2.setLid(2);
+	  laptop2.setLname("dell");
+	  
+	  
+   }
+}

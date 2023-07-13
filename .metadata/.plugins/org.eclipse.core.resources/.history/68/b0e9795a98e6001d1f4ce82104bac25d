@@ -1,0 +1,55 @@
+package com.association.core;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.engine.profile.Association;
+
+import com.association.entity.Brand;
+import com.association.entity.Product;
+import com.association.repository.association;
+
+public class ManyToMany 
+{
+  public static void main(String[] args) 
+  {
+	  
+	 Product product = new Product();
+	 product.setProductName("curd");
+	 Product product2 = new Product();
+	 product2.setProductName("hemanth milk");
+	 Product product3 = new Product();
+	 product3.setProductName("tiger ghee");
+	 Product product4= new Product();
+	 product4.setProductName("venkatesh paneer");
+	 
+	 List<Product> products = new ArrayList<>();
+	 products.add(product4);
+	 products.add(product3);
+	 products.add(product2);
+	 products.add(product);
+	 
+	  
+	
+	 Brand brand = new Brand();
+	 brand.setBrand("arogya");
+	 Brand brand2 = new Brand();
+	 brand.setBrand("dodla");
+	 Brand brand3 = new Brand();
+	 brand.setBrand("heritage");
+	 Brand brand4= new Brand();
+	 brand.setBrand("amul");
+	 
+	List<Brand> brands= new ArrayList<>();
+	brands.add(brand4);
+	brands.add(brand3);
+	brands.add(brand2);
+	brands.add(brand);
+	
+	
+	association association = new association();
+	association.saveBrands(brand);
+	association.save
+	
+  }
+}

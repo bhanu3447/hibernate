@@ -1,0 +1,44 @@
+package com.association.core;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.association.entity.Laptop;
+import com.association.entity.Student;
+import com.association.repository.association;
+
+public class ManyToOne
+{
+   public static void main(String[] args) 
+   {
+	   
+
+		  Student student = new Student();
+		  student.setName("bhanu");
+		  student.setSid(123);
+		  
+	  Laptop laptop = new Laptop();
+	  laptop.setLid(1);
+	  laptop.setLname("hp");
+	  laptop.setStudent(student);
+	  
+	 
+	 
+	  Laptop laptop2 = new Laptop();
+	  laptop2.setLid(2);
+	  laptop2.setLname("dell");
+	  laptop2.setStudent(student);
+	  
+	  
+	  association association = new association();
+	  
+	  association.saveLaptopDetails(laptop);
+	  association.saveLaptopDetails(laptop2);
+	  
+	  
+	  
+	  
+	  
+	  
+   }
+}

@@ -1,0 +1,60 @@
+package com.association.entity;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+
+@Entity
+public class Address 
+{
+	@Id
+	@Column(name = "aid")
+	private int aid;
+	
+	
+	@Column(name = "addloc")
+	private String addloc;
+	
+	@Column(name = "pin")
+	private long pin;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	private Employee employee;
+
+	public int getAid() {
+		return aid;
+	}
+
+	public void setAid(int aid) {
+		this.aid = aid;
+	}
+
+	public String getAddloc() {
+		return addloc;
+	}
+
+	public void setAddloc(String addloc) {
+		this.addloc = addloc;
+	}
+
+	public long getPin() {
+		return pin;
+	}
+
+	public void setPin(long pin) {
+		this.pin = pin;
+	}
+
+	public Employee getEmployee() {
+		return employee;
+	}
+
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
+	}
+	
+
+}
